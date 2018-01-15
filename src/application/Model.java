@@ -7,7 +7,7 @@ import javafx.util.converter.BooleanStringConverter;
 
 public class Model {
 
-    final String msg1Prime = "Number must be > 2.";
+    final String msg1Prime = "Number must beeeeeeee > 2.";
     ArrayList<Integer> analysis = new ArrayList<>();
 
     protected ArrayList analysisTest(int x) {
@@ -113,7 +113,7 @@ public class Model {
         int i = 2;
         while ( i < prm ) {
             if (prm % i == 0) {
-                return false; // isnt't prime
+                return  false; // isnt't prime
             }
             i++;
         }
