@@ -1,0 +1,33 @@
+/* Ja
+ * vaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property
+ */
+ 
+ #button {
+ 	-fx-background-image: url("/application/assets/button.jpg");
+ }
+/* */
+#anchor{
+    -fx-background-image: url("/application/assets/BgPic.png");
+	-fx-background-position: left top, center;
+	-fx-background-repeat: repeat;
+	-fx-background-size: cover, auto;
+
+}
+
+.yellowID  {
+	-fx-text-fill: yellow; 
+	-fx-font-size: 7px ;
+}
+.redText {
+	-fx-text-fill: #116ff6, #19AEC6;
+	-fx-font-size: 15px; 
+	-fx-font-weight: bold;
+	/*-fx-text-inner-color: red; */
+}
+
+
+
+
+
+
+/*https://www.google.com/images/srpr/logo3w.png  */

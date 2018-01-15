@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="anchor" opacity="0.94" prefHeight="400.0" prefWidth="695.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+
+   <children>
+      <Pane layoutX="47.0" layoutY="13.0" prefHeight="73.0" prefWidth="278.0">
+         <children>
+            <RadioButton fx:id="radButFactorial" contentDisplay="CENTER" layoutX="1.0" layoutY="40.0" mnemonicParsing="false" text="Factorial">
+               <toggleGroup>
+                  <ToggleGroup fx:id="optionUser" />
+               </toggleGroup>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </RadioButton>
+            <TextField fx:id="txtFieldFactorial" layoutX="240.0" layoutY="25.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="40.0" prefHeight="21.0" prefWidth="114.0" text="Enter the fact" textFill="#ff00df">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="13.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="redText" />
+                  <String fx:value="yellowID" />
+               </styleClass>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fx:id="btnCalc" fitHeight="73.0" fitWidth="82.0" layoutX="545.0" layoutY="282.0" onMouseClicked="#userOptionCalculate" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/button.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Pane layoutX="47.0" layoutY="100.0" prefHeight="73.0" prefWidth="278.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="19.0" prefHeight="21.0" prefWidth="114.0" styleClass="redText" text="Enter the base" textFill="#2652a4">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFBase" layoutX="240.0" layoutY="6.0" prefHeight="25.0" prefWidth="28.0" promptText="X" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="45.0" prefHeight="21.0" prefWidth="125.0" styleClass="redText" text="Enter the power" textFill="#2652a4">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFPower" layoutX="240.0" layoutY="38.0" prefHeight="25.0" prefWidth="28.0" promptText="Y" />
+            <RadioButton fx:id="radButExponent" contentDisplay="CENTER" layoutX="1.0" layoutY="15.0" mnemonicParsing="false" text="Exponent" textAlignment="CENTER" toggleGroup="$optionUser">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></RadioButton>
+         </children>
+      </Pane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="281.0" prefHeight="39.0" prefWidth="125.0" text="The result is" textAlignment="CENTER" textFill="#2652a4">
+         <font>
+            <Font name="Rockwell Extra Bold" size="13.0" />
+         </font>
+      </Label>
+      <Pane layoutX="48.0" layoutY="151.0" prefHeight="73.0" prefWidth="278.0">
+         <children>
+            <RadioButton fx:id="radButIsPrime" contentDisplay="CENTER" layoutY="43.0" mnemonicParsing="false" text="Is Prime ?" toggleGroup="$optionUser">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></RadioButton>
+            <TextField fx:id="txtFieldIsPrime" layoutX="240.0" layoutY="25.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="108.0" layoutY="41.0" prefHeight="21.0" prefWidth="125.0" text="Enter the number" textFill="#ff00df">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="13.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="redText" />
+                  <String fx:value="yellowID" />
+               </styleClass>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="358.0" layoutY="13.0" prefHeight="73.0" prefWidth="278.0">
+         <children>
+            <RadioButton fx:id="radButForAnalysis" contentDisplay="CENTER" layoutX="1.0" layoutY="36.0" mnemonicParsing="false" text="Analysis" toggleGroup="$optionUser">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></RadioButton>
+            <TextField fx:id="txtFieldAnalysisIsNumber" layoutX="235.0" layoutY="25.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="40.0" prefHeight="21.0" prefWidth="125.0" text="Enter the number" textFill="#ff00df">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="13.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="redText" />
+                  <String fx:value="yellowID" />
+               </styleClass>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="lblResult" alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="291.0" prefHeight="21.0" prefWidth="240.0" textFill="#ff00df">
+         <font>
+            <Font name="Rockwell Extra Bold" size="13.0" />
+         </font>
+         <styleClass>
+            <String fx:value="redText" />
+            <String fx:value="yellowID" />
+         </styleClass>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Label>
+      <Pane layoutX="358.0" layoutY="152.0" prefHeight="73.0" prefWidth="312.0">
+         <children>
+            <RadioButton fx:id="radButForLCM" contentDisplay="CENTER" layoutX="1.0" layoutY="36.0" mnemonicParsing="false" text="LCM" toggleGroup="$optionUser">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </RadioButton>
+            <TextField fx:id="txtFieldLCMx" layoutX="239.0" layoutY="25.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" layoutY="38.0" prefHeight="21.0" prefWidth="147.0" text="Enter the numbers" textFill="#ff00df">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="13.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="redText" />
+                  <String fx:value="yellowID" />
+               </styleClass>
+            </Label>
+            <TextField fx:id="txtFieldLCMy" layoutX="272.0" layoutY="25.0" prefHeight="30.0" prefWidth="28.0" promptText="Y" />
+         </children>
+      </Pane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="268.0" layoutY="345.0" prefHeight="21.0" prefWidth="240.0" text="Copyright by Dimitris Baltas - 2017" textFill="#ff00df">
+         <font>
+            <Font name="Rockwell Extra Bold" size="13.0" />
+         </font>
+         <styleClass>
+            <String fx:value="redText" />
+            <String fx:value="yellowID" />
+         </styleClass>
+      </Label>
+      <Pane layoutX="358.0" layoutY="78.0" prefHeight="73.0" prefWidth="312.0">
+         <children>
+            <RadioButton fx:id="radButForGCD" contentDisplay="CENTER" layoutX="1.0" layoutY="36.0" mnemonicParsing="false" text="GCD" toggleGroup="$optionUser">
+                <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </RadioButton>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="34.0" prefHeight="21.0" prefWidth="125.0" text="Enter the number" textFill="#ff00df">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="13.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="redText" />
+                  <String fx:value="yellowID" />
+               </styleClass>
+            </Label>
+            <TextField fx:id="txtFieldGCDIsNumber" layoutX="235.0" layoutY="22.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
+         </children>
+       </Pane>
+       </children>
+       </AnchorPane>
