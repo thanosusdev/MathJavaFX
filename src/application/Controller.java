@@ -24,7 +24,7 @@ public class Controller {
 		if(radButFactorial.isSelected()) {
             lblResult.setText( String.valueOf(model.factorial(Integer.valueOf(txtFieldFactorial.getText()))));
 		}else if(radButExponent.isSelected()) {
-			lblResult.setText( Integer.toString(model.exponent(Integer.parseInt(txtFBase.getText()),Integer.parseInt(txtFPower.getText()))));
+			lblResult.setText( Double.toString(model.exponent(Integer.parseInt(txtFBase.getText()),Integer.parseInt(txtFPower.getText()))));
 		}else if(radButIsPrime.isSelected()) {
 			String resultString = model.isPrime(Integer.valueOf(txtFieldIsPrime.getText()));
 			lblResult.setText(resultString);

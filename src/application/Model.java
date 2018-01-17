@@ -47,19 +47,30 @@ public class Model {
     protected ArrayList xAnalysis(int x) {
         analysis.clear();
         if (isPrimeForMyJobTemporaly(x)) {
-//    		als = als % 2;
             analysis.add(x);
         }else {
-            int y = 0;
-            y = x / 2;
-            analysis.add(2);
-            for(int i = 2; i <= y;) {
-                if (isPrimeForMyJobTemporaly(i)) {
-                    y = y / i;
-                    analysis.add(i);
-                    if (y % i != 0) {
-                        i++;
+            while (x % 2 == 0) {
+                analysis.add(2);
+                x = x / 2;
+            }
+            for(int i = 3; i <= x;) {
+                if (isPrimeForMyJobTemporaly(i)) { //isPrime?
+                    if (isPrimeForMyJobTemporaly(x)) {
+                        analysis.add(x);
+                        return analysis;
                     }
+
+                    if (x % i == 0) {
+                        x = x / i;
+                        analysis.add(i);
+                    }else {
+                        i = i + 2;
+                    }
+                    /*if (x % i != 0) {
+                        i++;
+                    }*/
+                }else {
+                    i = i + 2;
                 }
             }
         }
@@ -95,18 +106,24 @@ public class Model {
         }
     }
 
-    protected int exponent(int bs, int pwr) {
+    protected double exponent(int bs, int pwr) {
     	if(pwr == 0) {
 			return 1;
 		}
+
+
+		/* a ^-n = 1 / a^n */
+        if(pwr < 0) {
+    	    return 1 / exponent(bs, -pwr);
+        }
+
         int tempBs = 1;
-        //int tempPwr = 1;
-        //bs * tempPwr * pwr;
         int exp = 0;
         for (int i = 1; i <= pwr; i++) {
             tempBs = tempBs * bs;
             exp = tempBs;
         }return exp;
+
     }
 
     protected boolean isPrimeForMyJobTemporaly(int prm) {
