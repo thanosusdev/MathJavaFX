@@ -1,14 +1,32 @@
 package application;
 
 import java.util.ArrayList;
-import java.util.Map.Entry;
-
-import javafx.util.converter.BooleanStringConverter;
 
 public class Model {
 
     final String msg1Prime = "Number must be > 2.";
-    ArrayList<Integer> analysis = new ArrayList<>();
+    /*** arrayList***/
+    ArrayList<Integer> local = new ArrayList<>();
+    ArrayList<Integer> analysis = new ArrayList<>(local);
+
+    //List<Integer> newList = new ArrayList<>(local);
+
+    protected ArrayList lcm(int x, int y) {
+        xAnalysis(x);
+        xAnalysis(y);
+        //analysis.clone();
+        //local.clone();
+        for (int i = 0; i <= analysis.size()-1; i++) {
+            //local.clone()
+            //local.add(analysis.get(i));
+            //analysis.get(i);
+            //local = analysis.get(i);
+            if (analysis.get(i) == local.get(i)) {
+
+            }
+        }
+        return null;
+    }
 
     protected ArrayList analysisTest(int x) {
         analysis.clear();
@@ -44,6 +62,10 @@ public class Model {
         return analysis;
     }
 
+
+    void  bar() {
+        // some code here
+    }
     protected ArrayList xAnalysis(int x) {
         analysis.clear();
         if (isPrimeForMyJobTemporaly(x)) {
@@ -59,16 +81,12 @@ public class Model {
                         analysis.add(x);
                         return analysis;
                     }
-
                     if (x % i == 0) {
                         x = x / i;
                         analysis.add(i);
                     }else {
                         i = i + 2;
                     }
-                    /*if (x % i != 0) {
-                        i++;
-                    }*/
                 }else {
                     i = i + 2;
                 }
@@ -110,8 +128,6 @@ public class Model {
     	if(pwr == 0) {
 			return 1;
 		}
-
-
 		/* a ^-n = 1 / a^n */
         if(pwr < 0) {
     	    return 1 / exponent(bs, -pwr);
@@ -123,7 +139,6 @@ public class Model {
             tempBs = tempBs * bs;
             exp = tempBs;
         }return exp;
-
     }
 
     protected boolean isPrimeForMyJobTemporaly(int prm) {
