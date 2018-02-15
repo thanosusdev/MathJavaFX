@@ -34,40 +34,45 @@ public class Model {
         int var = 0;
         int flirt = 0;
         int temp = 0;
+        int temp2 = 0;
         fillAll();
         Iterator itr = hsetLCM1.iterator();
-        while(itr.hasNext())
-        {	
-        	for (int i = 0; i <= analysis.size() -1; i++) {
-        		temp = analysis.get(i);
-        		lcmList.add(temp);
-        		if (hsetLCM1.contains(temp)) {
-                    COUNTER++;
-                }
-//        		if (itr.equals(temp)) {
-//        		COUNTER++;
-//        	}
-        	}
-        	
-            System.out.println(itr.next());
-        }
-        int temp2 = 0;
         Iterator itr2 = hSetLCM2.iterator();
-        while(itr2.hasNext())
+        while(itr.hasNext() || itr2.hasNext())
         {
-            for (int i = 0; i <= local.size() -1; i++) {
-                temp2 = local.get(i);
-                lcmList.add(temp);
-                if (hSetLCM2.contains(temp2)) {
-                    COUNTER2++;
+            if (hsetLCM1.iterator().hasNext() == true) {
+                //...
+                for (int i = 0; i <= analysis.size() -1; i++) {
+                    temp = analysis.get(i);
+                    lcmList.add(temp);
+                    if (hsetLCM1.contains(temp)) {
+                        COUNTER++;
+                    }
                 }
-//        		if (itr.equals(temp)) {
-//        		COUNTER++;
-//        	}
+                //analysis.clear();
+            }
+            else if (itr2.hasNext()) {
+                //..
+                for (int i = 0; i <= local.size() -1; i++) {
+                    temp2 = local.get(i);
+                    lcmList.add(temp);
+                    if (hSetLCM2.contains(temp2)) {
+                        COUNTER2++;
+                    }
+                }
+                local.clear();
             }
 
+        	
             //System.out.println(itr.next());
         }
+       // int temp2 = 0;
+       /* while(itr2.hasNext())
+        {*/
+
+
+            //System.out.println(itr.next());
+      //  }
         System.out.println(hsetLCM1);
         //foreach r in t :
         return lcmList;
