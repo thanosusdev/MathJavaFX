@@ -33,7 +33,7 @@ public class Controller {
 		}else if(radButForGCD.isSelected()) {
 			lblResult.setText("uck");
 		}else if(radButForLCM.isSelected()) {
-			lblResult.setText("ck");
+			lblResult.setText(String.valueOf(model.lcm(Integer.parseInt(txtFieldLCMx.getText()),Integer.parseInt(txtFieldLCMy.getText()))));
 		}
 	}
 }

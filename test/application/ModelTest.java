@@ -34,7 +34,6 @@ class ModelTest {
             //add(new ArrayList<>(Arrays.asList(0)));
         }};
 
-
         for(int i = 0; i <= actualList.length-1; i++) {
             actual = model.xAnalysis(actualList[i]);
             assertEquals(expectedList.get(i), actual);
@@ -54,10 +53,6 @@ class ModelTest {
             actual  = model.factorial(listActual[i]);
             assertEquals(listExpected[i], actual);
         }
-
-
-
-
     }
 
     @Test

@@ -1,71 +1,113 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 public class Model {
 
     final String msg1Prime = "Number must be > 2.";
-    /*** arrayList***/
-    ArrayList<Integer> local = new ArrayList<>();
-    ArrayList<Integer> analysis = new ArrayList<>(local);
 
-    //List<Integer> newList = new ArrayList<>(local);
+        /*** to remember to change the ArrayList to List sketo ***/
+        ArrayList<Integer> local = new ArrayList<>();
+        ArrayList<Integer> analysis = new ArrayList<>();
+        ArrayList<Integer> lcmArrList = new ArrayList<>();
+        List<Integer> lcmList = new ArrayList<>();
 
-    protected ArrayList lcm(int x, int y) {
+        HashSet<Integer> hsetLCM1 = new HashSet<>(analysis);
+        Set<Integer> hSetLCM2 = new HashSet<>(local);
+        public void fillAll() {
+        	hsetLCM1.addAll(analysis);
+        	hSetLCM2.addAll(local);
+        	System.out.println("first hash set"+hsetLCM1);
+            System.out.println("second hash set"+hSetLCM2);
+        }
+
+    protected List<Integer> lcm(int x, int y) {
+
         xAnalysis(x);
-        xAnalysis(y);
-        //analysis.clone();
-        //local.clone();
-        for (int i = 0; i <= analysis.size()-1; i++) {
-            //local.clone()
-            //local.add(analysis.get(i));
-            //analysis.get(i);
-            //local = analysis.get(i);
-            if (analysis.get(i) == local.get(i)) {
+        localAnalysis(y);
+        int COUNTER = 0;
+        int COUNTER2 = 0;
+        int var = 0;
+        int flirt = 0;
+        int temp = 0;
+        fillAll();
+        Iterator itr = hsetLCM1.iterator();
+        while(itr.hasNext())
+        {	
+        	for (int i = 0; i <= analysis.size() -1; i++) {
+        		temp = analysis.get(i);
+        		lcmList.add(temp);
+        		if (hsetLCM1.contains(temp)) {
+                    COUNTER++;
+                }
+//        		if (itr.equals(temp)) {
+//        		COUNTER++;
+//        	}
+        	}
+        	
+            System.out.println(itr.next());
+        }
+        int temp2 = 0;
+        Iterator itr2 = hSetLCM2.iterator();
+        while(itr2.hasNext())
+        {
+            for (int i = 0; i <= local.size() -1; i++) {
+                temp2 = local.get(i);
+                lcmList.add(temp);
+                if (hSetLCM2.contains(temp2)) {
+                    COUNTER2++;
+                }
+//        		if (itr.equals(temp)) {
+//        		COUNTER++;
+//        	}
+            }
 
+            //System.out.println(itr.next());
+        }
+        System.out.println(hsetLCM1);
+        //foreach r in t :
+        return lcmList;
+    }
+    
+    /*** <p>This Method is connected with local List</p> ***/
+    protected ArrayList localAnalysis(int y) {
+        local.clear();
+        if (isPrimeForMyJobTemporaly(y)) {
+            local.add(y);
+        }else {
+            while (y % 2 == 0) {
+                local.add(2);
+                y = y / 2;
+            }
+            for(int i = 3; i <= y;) {
+                if (isPrimeForMyJobTemporaly(i)) { //isPrime?
+                    if (isPrimeForMyJobTemporaly(y)) {
+                        local.add(y);
+                        return local;
+                    }
+                    if (y % i == 0) {
+                        y = y / i;
+                        local.add(i);
+                    }else {
+                        i = i + 2;
+                    }
+                }else {
+                    i = i + 2;
+                }
             }
         }
-        return null;
+        return local;
     }
-
-    protected ArrayList analysisTest(int x) {
-        analysis.clear();
-        if (isPrimeForMyJobTemporaly(x)) {
-//    		als = als % 2;
-            analysis.add(x);
-        }else {
-            int index = 2;
-            x = x / 2;
-            analysis.add(2);
-            do {
-                /*x = x / 2;
-                analysis.add(2);*/
-                if (x % index != 0) {
-                    index++;
-                }else {
-                    x = x / index;
-                }
-            }while (x % index != 0 && index >= 2);
-            //x = x / index;
-            /*if (x % index != 0) {
-                index++;
-            }*/
-
-            /*for(int i = 2; i <= y; i++) {
-                if (isPrimeForMyJobTemporaly(i)) {
-                    //int z;
-                    y = y / i;
-                    analysis.add(i);
-                }
-            }*/
-        }
-        return analysis;
-    }
-
 
     void  bar() {
         // some code here
     }
+    
+    /*** <p>This Method is connected with analysis List</p> ***/
     protected ArrayList xAnalysis(int x) {
         analysis.clear();
         if (isPrimeForMyJobTemporaly(x)) {
@@ -93,26 +135,6 @@ public class Model {
             }
         }
         return analysis;
-    }
-
-    protected ArrayList analysis(int x) {
-        analysis.clear();
-    	if (isPrimeForMyJobTemporaly(x)) {
-//    		als = als % 2;
-    		analysis.add(x);
-		}else {
-            int y = 0;
-            y = x / 2;
-            analysis.add(2);
-            for(int i = 2; i <= y; i++) {
-                if (isPrimeForMyJobTemporaly(i)) {
-                    //int z;
-                    y = y / i;
-                    analysis.add(i);
-                }
-            }
-        }
-		return analysis;
     }
 
     public int factorial(int n) {
