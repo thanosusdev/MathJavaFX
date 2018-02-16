@@ -1,136 +1,89 @@
 package application;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Model {
 
-    final String msg1Prime = "Number must be > 2.";
+    private final String msg1Prime = "Number must be > 2.";
 
         /*** to remember to change the ArrayList to List sketo ***/
-        ArrayList<Integer> local = new ArrayList<>();
-        ArrayList<Integer> analysis = new ArrayList<>();
-        ArrayList<Integer> lcmArrList = new ArrayList<>();
-        List<Integer> lcmList = new ArrayList<>();
+        ArrayList<Integer> primefactorsOfY = new ArrayList<>();
+        ArrayList<Integer> primefactorsOfX = new ArrayList<>();
+        ArrayList<Integer> lcmList = new ArrayList<>(); // Alt + Enter
 
-        HashSet<Integer> hsetLCM1 = new HashSet<>(analysis);
-        Set<Integer> hSetLCM2 = new HashSet<>(local);
-        public void fillAll() {
-        	hsetLCM1.addAll(analysis);
-        	hSetLCM2.addAll(local);
-        	System.out.println("first hash set"+hsetLCM1);
-            System.out.println("second hash set"+hSetLCM2);
+
+        HashSet<Integer> discretePrimeFactorsOfX = new HashSet<>(primefactorsOfX);
+        HashSet<Integer> discretePrimeFactorsOfY = new HashSet<>(primefactorsOfY);
+
+
+
+    protected double lcm(int x, int y) {
+
+        primefactorsOfX = calculatePrimeFactorization(x);
+        primefactorsOfY = calculatePrimeFactorization(y);
+        discretePrimeFactorsOfX.addAll(primefactorsOfX);
+        discretePrimeFactorsOfY.addAll(primefactorsOfY);
+
+            /* X = (2, 2, 2)
+                    (2)
+
+
+               Y = (2, 2, 3)
+                    (2, 3)
+
+               commonAndNonCommonFactors         = 2, 2, 2, 2, 2, 3
+               discreteCommonAndNonCommonFactors = 2, 3
+
+               final = 2 ^ 3 * 3
+             */
+
+        List<Integer> commonAndNonCommonFactors = Stream.concat(primefactorsOfX.stream(), primefactorsOfY.stream())
+                .collect(Collectors.toList());
+
+        Set<Integer> discreteCommonAndNonCommonFactors = new HashSet<> (commonAndNonCommonFactors);
+
+        int maximumExp;
+
+        double result = 1;
+
+        for (Integer  i: discreteCommonAndNonCommonFactors) {
+            int occurenceInX = Collections.frequency(primefactorsOfX, i);
+            int occurenceInY = Collections.frequency(primefactorsOfY, i);
+
+            if ( occurenceInX > occurenceInY ) {
+                maximumExp = occurenceInX;
+            }
+            else {
+                maximumExp = occurenceInY;
+            }
+
+            result = result * Math.pow(i, maximumExp);
         }
-
-    protected List<Integer> lcm(int x, int y) {
-
-        xAnalysis(x);
-        localAnalysis(y);
-        int COUNTER = 0;
-        int COUNTER2 = 0;
-        int var = 0;
-        int flirt = 0;
-        int temp = 0;
-        int temp2 = 0;
-        fillAll();
-        Iterator itr = hsetLCM1.iterator();
-        Iterator itr2 = hSetLCM2.iterator();
-        while(itr.hasNext() || itr2.hasNext())
-        {
-            if (hsetLCM1.iterator().hasNext() == true) {
-                //...
-                for (int i = 0; i <= analysis.size() -1; i++) {
-                    temp = analysis.get(i);
-                    lcmList.add(temp);
-                    if (hsetLCM1.contains(temp)) {
-                        COUNTER++;
-                    }
-                }
-                //analysis.clear();
-            }
-            else if (itr2.hasNext()) {
-                //..
-                for (int i = 0; i <= local.size() -1; i++) {
-                    temp2 = local.get(i);
-                    lcmList.add(temp);
-                    if (hSetLCM2.contains(temp2)) {
-                        COUNTER2++;
-                    }
-                }
-                local.clear();
-            }
-
-        	
-            //System.out.println(itr.next());
-        }
-       // int temp2 = 0;
-       /* while(itr2.hasNext())
-        {*/
-
-
-            //System.out.println(itr.next());
-      //  }
-        System.out.println(hsetLCM1);
-        //foreach r in t :
-        return lcmList;
-    }
-    
-    /*** <p>This Method is connected with local List</p> ***/
-    protected ArrayList localAnalysis(int y) {
-        local.clear();
-        if (isPrimeForMyJobTemporaly(y)) {
-            local.add(y);
-        }else {
-            while (y % 2 == 0) {
-                local.add(2);
-                y = y / 2;
-            }
-            for(int i = 3; i <= y;) {
-                if (isPrimeForMyJobTemporaly(i)) { //isPrime?
-                    if (isPrimeForMyJobTemporaly(y)) {
-                        local.add(y);
-                        return local;
-                    }
-                    if (y % i == 0) {
-                        y = y / i;
-                        local.add(i);
-                    }else {
-                        i = i + 2;
-                    }
-                }else {
-                    i = i + 2;
-                }
-            }
-        }
-        return local;
+        return result;
     }
 
-    void  bar() {
-        // some code here
-    }
-    
-    /*** <p>This Method is connected with analysis List</p> ***/
-    protected ArrayList xAnalysis(int x) {
-        analysis.clear();
+    /*** <p>This Method is connected with primefactorsOfX List</p> ***/
+    protected ArrayList calculatePrimeFactorization(int x) {
+        ArrayList<Integer> list = new ArrayList<>();
+
         if (isPrimeForMyJobTemporaly(x)) {
-            analysis.add(x);
+            list.add(x);
         }else {
             while (x % 2 == 0) {
-                analysis.add(2);
+                list.add(2);
                 x = x / 2;
             }
             for(int i = 3; i <= x;) {
                 if (isPrimeForMyJobTemporaly(i)) { //isPrime?
                     if (isPrimeForMyJobTemporaly(x)) {
-                        analysis.add(x);
-                        return analysis;
+                        list.add(x);
+                        return list;
                     }
                     if (x % i == 0) {
                         x = x / i;
-                        analysis.add(i);
+                        list.add(i);
                     }else {
                         i = i + 2;
                     }
@@ -139,7 +92,7 @@ public class Model {
                 }
             }
         }
-        return analysis;
+        return list;
     }
 
     public int factorial(int n) {
