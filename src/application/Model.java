@@ -1,5 +1,4 @@
 package application;
-
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -17,8 +16,13 @@ public class Model {
         HashSet<Integer> discretePrimeFactorsOfX = new HashSet<>(primefactorsOfX);
         HashSet<Integer> discretePrimeFactorsOfY = new HashSet<>(primefactorsOfY);
 
-
-
+    protected double absoluteValue(double absv) {
+        return absv;
+    }
+    protected double sqrRoot(double sqrt) {
+        double root;
+        return root = Math.sqrt(sqrt);
+    }
     protected double lcm(int x, int y) {
 
         primefactorsOfX = calculatePrimeFactorization(x);
@@ -28,7 +32,6 @@ public class Model {
 
             /* X = (2, 2, 2)
                     (2)
-
 
                Y = (2, 2, 3)
                     (2, 3)

@@ -9,9 +9,9 @@ import javafx.scene.image.ImageView;
 public class Controller {
 
 	@FXML 
-	RadioButton radButFactorial, radButExponent, radButIsPrime, radButForAnalysis, radButForGCD, radButForLCM;
+	RadioButton radButFactorial, radButExponent, radButIsPrime, radButForAnalysis, radButForGCD, radButForLCM, radButForSQRRoot, radButForAbsValue;
 	@FXML
-	TextField txtFieldFactorial, txtFBase, txtFPower, txtFieldIsPrime, txtFieldAnalysisIsNumber, txtFieldGCDIsNumber, txtFieldLCMx, txtFieldLCMy;
+	TextField txtFieldFactorial, txtFBase, txtFPower, txtFieldIsPrime, txtFieldAnalysisIsNumber, txtFieldGCDIsNumber, txtFieldLCMx, txtFieldLCMy, txtFieldSQRRootX, txtFieldSQRRootY, txtFieldAbsX, txtFieldAbsY;
 	@FXML
 	Label lblResult;
 	@FXML
@@ -29,11 +29,15 @@ public class Controller {
 			String resultString = model.isPrime(Integer.valueOf(txtFieldIsPrime.getText()));
 			lblResult.setText(resultString);
 		}else if(radButForAnalysis.isSelected()) {		
-			lblResult.setText( String.valueOf(model.xAnalysis(Integer.valueOf(txtFieldAnalysisIsNumber.getText())).toString()));
+			lblResult.setText( String.valueOf(model.calculatePrimeFactorization(Integer.valueOf(txtFieldAnalysisIsNumber.getText())).toString()));
 		}else if(radButForGCD.isSelected()) {
 			lblResult.setText("uck");
 		}else if(radButForLCM.isSelected()) {
 			lblResult.setText(String.valueOf(model.lcm(Integer.parseInt(txtFieldLCMx.getText()),Integer.parseInt(txtFieldLCMy.getText()))));
+		}else if(radButForSQRRoot.isSelected()) {
+			txtFieldSQRRootY.setText(String.valueOf(model.sqrRoot(Double.valueOf(txtFieldSQRRootX.getText()))));
+		}else if(radButForAbsValue.isSelected()) {
+			// some code over here ...
 		}
 	}
 }

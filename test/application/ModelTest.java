@@ -35,7 +35,7 @@ class ModelTest {
         }};
 
         for(int i = 0; i <= actualList.length-1; i++) {
-            actual = model.xAnalysis(actualList[i]);
+            actual = model.calculatePrimeFactorization(actualList[i]);
             assertEquals(expectedList.get(i), actual);
         }
 
