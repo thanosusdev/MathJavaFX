@@ -16,6 +16,12 @@ public class Model {
         HashSet<Integer> discretePrimeFactorsOfX = new HashSet<>(primefactorsOfX);
         HashSet<Integer> discretePrimeFactorsOfY = new HashSet<>(primefactorsOfY);
 
+    protected double percentage(double x, double y) {
+        double percent = 0;
+        percent = (x * y) / 100;
+        return percent;
+    }
+
     protected double absoluteValue(double absv) {
         if ( absv < 0 ) {
             return -absv;
@@ -24,7 +30,7 @@ public class Model {
     }
 
     protected double sqrRoot(double sqrt) {
-        return sqrt = Math.sqrt(sqrt);
+        return Math.sqrt(sqrt);
     }
 
     protected double lcm(int x, int y) {

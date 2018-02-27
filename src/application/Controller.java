@@ -9,9 +9,9 @@ import javafx.scene.image.ImageView;
 public class Controller {
 
 	@FXML 
-	RadioButton radButFactorial, radButExponent, radButIsPrime, radButForAnalysis, radButForGCD, radButForLCM, radButForSQRRoot, radButForAbsValue;
+	RadioButton radButFactorial, radButExponent, radButIsPrime, radButForAnalysis, radButForGCD, radButForLCM, radButForSQRRoot, radButForAbsValue, radButForPercentage;
 	@FXML
-	TextField txtFieldFactorial, txtFBase, txtFPower, txtFieldIsPrime, txtFieldAnalysisIsNumber, txtFieldGCDIsNumber, txtFieldLCMx, txtFieldLCMy, txtFieldSQRRootX, txtFieldSQRRootY, txtFieldAbsX, txtFieldAbsY;
+	TextField txtFieldFactorial, txtFBase, txtFPower, txtFieldIsPrime, txtFieldAnalysisIsNumber, txtFieldGCDIsNumber, txtFieldLCMx, txtFieldLCMy, txtFieldSQRRootX, txtFieldSQRRootY, txtFieldAbsX, txtFieldAbsY, txtFieldPercentX, txtFieldPercentY;
 	@FXML
 	Label lblResult;
 	@FXML
@@ -38,6 +38,8 @@ public class Controller {
 			txtFieldSQRRootY.setText(String.valueOf(model.sqrRoot(Double.valueOf(txtFieldSQRRootX.getText()))));
 		}else if(radButForAbsValue.isSelected()) {
 			txtFieldAbsY.setText(String.valueOf(model.absoluteValue(Double.valueOf(txtFieldAbsX.getText()))));
+		}else if(radButForPercentage.isSelected()) {
+			lblResult.setText(String.valueOf(model.percentage(Double.valueOf(txtFieldPercentX.getText()), Double.valueOf(txtFieldPercentY.getText()))));
 		}
 	}
 }
