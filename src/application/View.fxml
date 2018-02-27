@@ -4,6 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.ColorAdjust?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchor" opacity="0.94" prefHeight="400.0" prefWidth="695.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<AnchorPane id="anchor" prefHeight="495.0" prefWidth="787.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
 
    <children>
       <Pane layoutX="47.0" layoutY="13.0" prefHeight="73.0" prefWidth="278.0">
@@ -26,7 +27,7 @@
                   <ToggleGroup fx:id="optionUser" />
                </toggleGroup>
             </RadioButton>
-            <TextField fx:id="txtFieldFactorial" layoutX="240.0" layoutY="25.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
+            <TextField fx:id="txtFieldFactorial" layoutX="240.0" layoutY="27.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="40.0" prefHeight="21.0" prefWidth="114.0" text="Enter the fact" textFill="#ff00df">
                <font>
                   <Font name="Rockwell Extra Bold" size="13.0" />
@@ -38,7 +39,7 @@
             </Label>
          </children>
       </Pane>
-      <ImageView fx:id="btnCalc" fitHeight="73.0" fitWidth="82.0" layoutX="545.0" layoutY="282.0" onMouseClicked="#userOptionCalculate" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnCalc" fitHeight="73.0" fitWidth="82.0" layoutX="566.0" layoutY="369.0" onMouseClicked="#userOptionCalculate" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/button.jpg" />
          </image>
@@ -48,37 +49,38 @@
       </ImageView>
       <Pane layoutX="47.0" layoutY="100.0" prefHeight="73.0" prefWidth="278.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="19.0" prefHeight="21.0" prefWidth="114.0" styleClass="redText" text="Enter the base" textFill="#2652a4">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="8.0" prefHeight="21.0" prefWidth="114.0" styleClass="redText" text="Enter the base" textFill="#2652a4">
                <font>
                   <Font name="Rockwell Extra Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="txtFBase" layoutX="240.0" layoutY="6.0" prefHeight="25.0" prefWidth="28.0" promptText="X" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="45.0" prefHeight="21.0" prefWidth="125.0" styleClass="redText" text="Enter the power" textFill="#2652a4">
+            <TextField fx:id="txtFBase" layoutX="240.0" layoutY="1.0" prefHeight="25.0" prefWidth="28.0" promptText="X" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="35.0" prefHeight="21.0" prefWidth="125.0" styleClass="redText" text="Enter the power" textFill="#2652a4">
                <font>
                   <Font name="Rockwell Extra Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="txtFPower" layoutX="240.0" layoutY="38.0" prefHeight="25.0" prefWidth="28.0" promptText="Y" />
+            <TextField fx:id="txtFPower" layoutX="240.0" layoutY="32.0" prefHeight="25.0" prefWidth="28.0" promptText="Y" />
             <RadioButton fx:id="radButExponent" contentDisplay="CENTER" layoutX="1.0" layoutY="15.0" mnemonicParsing="false" text="Exponent" textAlignment="CENTER" toggleGroup="$optionUser">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></RadioButton>
          </children>
       </Pane>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="281.0" prefHeight="39.0" prefWidth="125.0" text="The result is" textAlignment="CENTER" textFill="#2652a4">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="385.0" prefHeight="39.0" prefWidth="125.0" text="The result is" textAlignment="CENTER" textFill="#2652a4">
          <font>
             <Font name="Rockwell Extra Bold" size="13.0" />
          </font>
       </Label>
-      <Pane layoutX="48.0" layoutY="151.0" prefHeight="73.0" prefWidth="278.0">
+      <Pane layoutX="44.0" layoutY="159.0" prefHeight="73.0" prefWidth="278.0">
          <children>
-            <RadioButton fx:id="radButIsPrime" contentDisplay="CENTER" layoutY="43.0" mnemonicParsing="false" text="Is Prime ?" toggleGroup="$optionUser">
+            <RadioButton fx:id="radButIsPrime" contentDisplay="CENTER" layoutY="29.0" mnemonicParsing="false" text="Is Prime ?" toggleGroup="$optionUser">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></RadioButton>
-            <TextField fx:id="txtFieldIsPrime" layoutX="240.0" layoutY="25.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="108.0" layoutY="41.0" prefHeight="21.0" prefWidth="125.0" text="Enter the number" textFill="#ff00df">
+               </cursor>
+            </RadioButton>
+            <TextField fx:id="txtFieldIsPrime" layoutX="240.0" layoutY="21.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="108.0" layoutY="27.0" prefHeight="21.0" prefWidth="125.0" text="Enter the number" textFill="#ff00df">
                <font>
                   <Font name="Rockwell Extra Bold" size="13.0" />
                </font>
@@ -89,7 +91,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="358.0" layoutY="8.0" prefHeight="73.0" prefWidth="278.0">
+      <Pane layoutX="382.0" layoutY="14.0" prefHeight="73.0" prefWidth="278.0">
          <children>
             <RadioButton fx:id="radButForAnalysis" contentDisplay="CENTER" layoutX="1.0" layoutY="36.0" mnemonicParsing="false" text="Analysis" toggleGroup="$optionUser">
                <cursor>
@@ -107,7 +109,7 @@
             </Label>
          </children>
       </Pane>
-      <Label fx:id="lblResult" alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="291.0" prefHeight="21.0" prefWidth="240.0" textFill="#ff00df">
+      <Label fx:id="lblResult" alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="395.0" prefHeight="21.0" prefWidth="240.0" textFill="#ff00df">
          <font>
             <Font name="Rockwell Extra Bold" size="13.0" />
          </font>
@@ -119,7 +121,7 @@
             <ColorAdjust />
          </effect>
       </Label>
-      <Pane layoutX="355.0" layoutY="148.0" prefHeight="73.0" prefWidth="312.0">
+      <Pane layoutX="379.0" layoutY="143.0" prefHeight="73.0" prefWidth="312.0">
          <children>
             <RadioButton fx:id="radButForLCM" contentDisplay="CENTER" layoutX="1.0" layoutY="36.0" mnemonicParsing="false" text="LCM" toggleGroup="$optionUser">
                <cursor>
@@ -139,16 +141,7 @@
             <TextField fx:id="txtFieldLCMy" layoutX="272.0" layoutY="25.0" prefHeight="30.0" prefWidth="28.0" promptText="Y" />
          </children>
       </Pane>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="268.0" layoutY="345.0" prefHeight="21.0" prefWidth="240.0" text="Copyright by Dimitris Baltas - 2017" textFill="#ff00df">
-         <font>
-            <Font name="Rockwell Extra Bold" size="13.0" />
-         </font>
-         <styleClass>
-            <String fx:value="redText" />
-            <String fx:value="yellowID" />
-         </styleClass>
-      </Label>
-      <Pane layoutX="357.0" layoutY="77.0" prefHeight="65.0" prefWidth="312.0">
+      <Pane layoutX="381.0" layoutY="83.0" prefHeight="65.0" prefWidth="312.0">
          <children>
             <RadioButton fx:id="radButForGCD" contentDisplay="CENTER" layoutX="1.0" layoutY="36.0" mnemonicParsing="false" text="GCD" toggleGroup="$optionUser">
                 <cursor>
@@ -167,10 +160,10 @@
             <TextField fx:id="txtFieldGCDIsNumber" layoutX="235.0" layoutY="22.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
          </children>
        </Pane>
-      <Pane layoutX="433.0" layoutY="221.0" prefHeight="73.0" prefWidth="354.0">
+      <Pane layoutX="42.0" layoutY="296.0" prefHeight="73.0" prefWidth="438.0">
          <children>
-            <TextField fx:id="txtFieldSQRRootX" layoutX="228.0" layoutY="27.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="33.0" prefHeight="21.0" prefWidth="147.0" text="The square root of " textFill="#ff00df">
+            <TextField fx:id="txtFieldSQRRootX" layoutX="228.0" layoutY="21.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="29.0" prefHeight="21.0" prefWidth="147.0" text="The square root of " textFill="#ff00df">
                <font>
                   <Font name="Rockwell Extra Bold" size="13.0" />
                </font>
@@ -179,8 +172,7 @@
                   <String fx:value="yellowID" />
                </styleClass>
             </Label>
-            <TextField fx:id="txtFieldSQRRootY" layoutX="278.0" layoutY="27.0" prefHeight="30.0" prefWidth="35.0" promptText="  Y" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="256.0" layoutY="32.0" prefHeight="21.0" prefWidth="22.0" text="is" textFill="#ff00df">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="256.0" layoutY="30.0" prefHeight="21.0" prefWidth="22.0" text="is" textFill="#ff00df">
                <font>
                   <Font name="Rockwell Extra Bold" size="13.0" />
                </font>
@@ -189,14 +181,15 @@
                   <String fx:value="yellowID" />
                </styleClass>
             </Label>
-            <RadioButton fx:id="radButForSQRRoot" contentDisplay="CENTER" layoutY="34.0" mnemonicParsing="false" text="Square Root" toggleGroup="$optionUser">
+            <RadioButton fx:id="radButForSQRRoot" contentDisplay="CENTER" layoutY="31.0" mnemonicParsing="false" text="Square Root" toggleGroup="$optionUser">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </RadioButton>
+            <TextField fx:id="txtFieldSQRRootY" layoutX="281.0" layoutY="21.0" prefHeight="30.0" prefWidth="45.0" promptText="   Y" />
          </children>
       </Pane>
-      <Pane layoutX="45.0" layoutY="222.0" prefHeight="73.0" prefWidth="376.0">
+      <Pane layoutX="43.0" layoutY="233.0" prefHeight="73.0" prefWidth="376.0">
          <children>
             <TextField fx:id="txtFieldAbsX" layoutX="269.0" layoutY="27.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="106.0" layoutY="33.0" prefHeight="21.0" prefWidth="164.0" text="The absolute value of " textFill="#ff00df">
@@ -208,7 +201,7 @@
                   <String fx:value="yellowID" />
                </styleClass>
             </Label>
-            <TextField fx:id="txtFieldAbsY" layoutX="319.0" layoutY="27.0" prefHeight="30.0" prefWidth="35.0" promptText="  Y" />
+            <TextField fx:id="txtFieldAbsY" layoutX="319.0" layoutY="27.0" prefHeight="30.0" prefWidth="45.0" promptText="   Y" />
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="297.0" layoutY="33.0" prefHeight="21.0" prefWidth="22.0" text="is" textFill="#ff00df">
                <font>
                   <Font name="Rockwell Extra Bold" size="13.0" />
@@ -225,5 +218,6 @@
             </RadioButton>
          </children>
       </Pane>
+      <Separator layoutX="139.0" layoutY="234.0" prefHeight="4.0" prefWidth="514.0" />
        </children>
        </AnchorPane>

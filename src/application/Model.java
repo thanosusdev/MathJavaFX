@@ -17,12 +17,16 @@ public class Model {
         HashSet<Integer> discretePrimeFactorsOfY = new HashSet<>(primefactorsOfY);
 
     protected double absoluteValue(double absv) {
+        if ( absv < 0 ) {
+            return -absv;
+        }
         return absv;
     }
+
     protected double sqrRoot(double sqrt) {
-        double root;
-        return root = Math.sqrt(sqrt);
+        return sqrt = Math.sqrt(sqrt);
     }
+
     protected double lcm(int x, int y) {
 
         primefactorsOfX = calculatePrimeFactorization(x);

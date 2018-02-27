@@ -37,7 +37,7 @@ public class Controller {
 		}else if(radButForSQRRoot.isSelected()) {
 			txtFieldSQRRootY.setText(String.valueOf(model.sqrRoot(Double.valueOf(txtFieldSQRRootX.getText()))));
 		}else if(radButForAbsValue.isSelected()) {
-			// some code over here ...
+			txtFieldAbsY.setText(String.valueOf(model.absoluteValue(Double.valueOf(txtFieldAbsX.getText()))));
 		}
 	}
 }
