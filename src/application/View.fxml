@@ -2,6 +2,7 @@
 
 <?import java.lang.String?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
@@ -141,7 +142,7 @@
             <TextField fx:id="txtFieldLCMy" layoutX="272.0" layoutY="25.0" prefHeight="30.0" prefWidth="28.0" promptText="Y" />
          </children>
       </Pane>
-      <Pane layoutX="381.0" layoutY="83.0" prefHeight="65.0" prefWidth="312.0">
+      <Pane layoutX="381.0" layoutY="81.0" prefHeight="65.0" prefWidth="312.0">
          <children>
             <RadioButton fx:id="radButForGCD" contentDisplay="CENTER" layoutX="1.0" layoutY="36.0" mnemonicParsing="false" text="GCD" toggleGroup="$optionUser">
                 <cursor>
@@ -160,7 +161,7 @@
             <TextField fx:id="txtFieldGCDIsNumber" layoutX="235.0" layoutY="22.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
          </children>
        </Pane>
-      <Pane layoutX="42.0" layoutY="296.0" prefHeight="73.0" prefWidth="438.0">
+      <Pane layoutX="42.0" layoutY="312.0" prefHeight="73.0" prefWidth="339.0">
          <children>
             <TextField fx:id="txtFieldSQRRootX" layoutX="228.0" layoutY="21.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="29.0" prefHeight="21.0" prefWidth="147.0" text="The square root of " textFill="#ff00df">
@@ -189,7 +190,7 @@
             <TextField fx:id="txtFieldSQRRootY" layoutX="281.0" layoutY="21.0" prefHeight="30.0" prefWidth="45.0" promptText="   Y" />
          </children>
       </Pane>
-      <Pane layoutX="43.0" layoutY="233.0" prefHeight="73.0" prefWidth="376.0">
+      <Pane layoutX="43.0" layoutY="249.0" prefHeight="73.0" prefWidth="376.0">
          <children>
             <TextField fx:id="txtFieldAbsX" layoutX="269.0" layoutY="27.0" prefHeight="30.0" prefWidth="28.0" promptText="X" />
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="106.0" layoutY="33.0" prefHeight="21.0" prefWidth="164.0" text="The absolute value of " textFill="#ff00df">
@@ -218,8 +219,8 @@
             </RadioButton>
          </children>
       </Pane>
-      <Separator layoutX="139.0" layoutY="234.0" prefHeight="4.0" prefWidth="514.0" />
-      <Pane layoutX="416.0" layoutY="235.0" prefHeight="73.0" prefWidth="303.0">
+      <Separator layoutX="113.0" layoutY="244.0" prefHeight="4.0" prefWidth="514.0" />
+      <Pane layoutX="416.0" layoutY="251.0" prefHeight="73.0" prefWidth="303.0">
          <children>
             <TextField fx:id="txtFieldPercentX" layoutX="141.0" layoutY="17.0" prefHeight="30.0" prefWidth="52.0" promptText="   X %" />
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="102.0" layoutY="26.0" prefHeight="21.0" prefWidth="37.0" text="The " textFill="#ff00df">
@@ -248,5 +249,8 @@
             </RadioButton>
          </children>
       </Pane>
+      <CheckBox fx:id="sallesCheckBox" layoutX="430.0" layoutY="334.0" mnemonicParsing="false" text="Salles" />
+      <Label layoutX="493.0" layoutY="334.0" text="The new price is" />
+      <Label fx:id="lblForSales" layoutX="589.0" layoutY="334.0" prefHeight="17.0" prefWidth="37.0" />
        </children>
        </AnchorPane>

@@ -16,6 +16,14 @@ public class Model {
         HashSet<Integer> discretePrimeFactorsOfX = new HashSet<>(primefactorsOfX);
         HashSet<Integer> discretePrimeFactorsOfY = new HashSet<>(primefactorsOfY);
 
+    protected double salles(double x, double y) {
+        double endPrice = 0;
+        double percent = 0;
+        percent = (x * y) / 100;
+        endPrice = y - percent;
+        return endPrice;
+    }
+
     protected double percentage(double x, double y) {
         double percent = 0;
         percent = (x * y) / 100;
@@ -134,7 +142,7 @@ public class Model {
         }return exp;
     }
 
-    protected boolean isPrimeForMyJobTemporaly(int prm) {
+    private boolean isPrimeForMyJobTemporaly(int prm) {
         int i = 2;
         while ( i < prm ) {
             if (prm % i == 0) {

@@ -1,6 +1,7 @@
 package application;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -13,9 +14,11 @@ public class Controller {
 	@FXML
 	TextField txtFieldFactorial, txtFBase, txtFPower, txtFieldIsPrime, txtFieldAnalysisIsNumber, txtFieldGCDIsNumber, txtFieldLCMx, txtFieldLCMy, txtFieldSQRRootX, txtFieldSQRRootY, txtFieldAbsX, txtFieldAbsY, txtFieldPercentX, txtFieldPercentY;
 	@FXML
-	Label lblResult;
+	Label lblResult, lblForSales;
 	@FXML
 	ImageView btnCalc;
+	@FXML
+    CheckBox sallesCheckBox;
 	private final Model model = new Model();
 	
 	@FXML
@@ -40,6 +43,8 @@ public class Controller {
 			txtFieldAbsY.setText(String.valueOf(model.absoluteValue(Double.valueOf(txtFieldAbsX.getText()))));
 		}else if(radButForPercentage.isSelected()) {
 			lblResult.setText(String.valueOf(model.percentage(Double.valueOf(txtFieldPercentX.getText()), Double.valueOf(txtFieldPercentY.getText()))));
-		}
+		}else if(radButForPercentage.isSelected() && sallesCheckBox.isSelected()) {
+            lblForSales.setText(String.valueOf(model.salles(Double.valueOf(txtFieldPercentX.getText()), Double.valueOf(txtFieldPercentY.getText()))));
+        }
 	}
 }
